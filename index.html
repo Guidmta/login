@@ -1,0 +1,203 @@
+Ehhez egy egységes HTML + CSS weboldalt (index.html) kell készítenünk, amit ha feltöltesz a GitHubra és bekapcsolod a GitHub Pages-t, azonnal lenn fog a böngésződben a háttérkép, a pontos SLYDMTA logó, és a kért login panel!
+
+Hozz létre egy index.html nevű fájlt (ügyelj arra, hogy pontosan ez legyen a neve), és tedd bele ezt a kódot:
+
+HTML
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLYDMTA - Bejelentkezés</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* Háttérkép beállítása (A hatter.png fájlnak a repóban kell lennie) */
+            background: url('hatter.png') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background-color: rgba(17, 19, 24, 0.9);
+            width: 400px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Logó felül */
+        .logo-container {
+            width: 70px;
+            height: 70px;
+            margin: -75px auto 15px auto;
+            background-color: #111318;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-container img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 22px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        p.subtitle {
+            color: #9ca3af;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #d1d5db;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            background-color: #1f242d;
+            border: 1px solid #374151;
+            border-radius: 6px;
+            padding: 12px 15px;
+            color: #ffffff;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-wrapper input:focus {
+            border-color: #ef4444;
+        }
+
+        .btn-login {
+            width: 100%;
+            background-color: #f3f4f6;
+            color: #111827;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn-login:hover {
+            background-color: #e5e7eb;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #6b7280;
+            font-size: 12px;
+            margin: 20px 0;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #374151;
+        }
+
+        .divider::before {
+            margin-right: 10px;
+        }
+
+        .divider::after {
+            margin-left: 10px;
+        }
+
+        .btn-register {
+            width: 100%;
+            background-color: #1f242d;
+            color: #9ca3af;
+            border: 1px solid #374151;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn-register:hover {
+            background-color: #374151;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <!-- Logó kép -->
+        <div class="logo-container">
+            <img src="logo.png" alt="SLYDMTA Logo">
+        </div>
+
+        <h1>Bejelentkezés</h1>
+        <p class="subtitle">Add meg az adataid, melyekkel InGame regisztráltál.</p>
+
+        <form>
+            <div class="input-group">
+                <label>Felhasználónév</label>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Jelszó</label>
+                <div class="input-wrapper">
+                    <input type="password" placeholder="" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-login">Bejelentkezés</button>
+        </form>
+
+        <div class="divider">VAGY</div>
+
+        <button class="btn-register">REGISZTRÁCIÓ</button>
+    </div>
+
+</body>
+</html>
